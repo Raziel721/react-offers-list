@@ -10,6 +10,10 @@ export class OffersClassComponent extends Component {
       data: data,
     };
   }
+  // adding an event, fallback image placeholder
+  addDefaultSrc(ev) {
+    ev.target.src = "https://via.placeholder.com/350x250";
+  }
   render() {
     const dataOffers = data[0].offers;
     console.log(dataOffers);
@@ -32,7 +36,12 @@ export class OffersClassComponent extends Component {
                 <div className="car-title">
                   <h3>{carName}</h3>
                 </div>
-                <img className="image" src={carImage} alt="Auto" />
+                <img
+                  className="image"
+                  src={carImage}
+                  onError={this.addDefaultSrc}
+                  alt="Auto"
+                />
                 <div className="car-price">
                   <p>
                     {carPrice}&nbsp;

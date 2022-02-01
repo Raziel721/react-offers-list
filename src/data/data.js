@@ -23422,7 +23422,7 @@ const data = [
           modelExample: {
             name: "VW Up!",
             imageUrl:
-              "https://sixt-vehicle-group-info-images-prod.s3-eu-west-1.amazonaws.com/1ff02d390d2884e3b3cb66c096d199fe1fba0fda.jpg",
+              "https://ssixt-vehicle-group-info-images-prod.s3-eu-west-1.amazonaws.com/1ff02d390d2884e3b3cb66c096d199fe1fba0fda.jpg",
             additionalExamples: ["Hyundai i10"],
           },
           premium: false,
