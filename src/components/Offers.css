@@ -1,18 +1,75 @@
+/* custom properties */
+:root {
+  --main-bg-color: #ff5f00;
+  --lighter-color: #b5b5b5;
+  --darker-color: #191919;
+  --text-spacing: 0.3rem 0.5rem;
+}
+/* creating the responsive grid with flexbox */
 .offers {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #ff5f00;
+  flex-wrap: wrap; /* wrap elments onto multiple rows  */
+  justify-content: center; /*center offers container */
+  background-color: var(--main-bg-color);
 }
+
+/* syling for the car name and for the car price */
+.car-title,
+.car-price {
+  display: flex;
+}
+.car-title {
+  justify-content: flex-start;
+}
+.car-price {
+  justify-content: flex-end;
+}
+.car-title h3,
+.car-price p {
+  background-color: var(--darker-color);
+  color: white;
+  padding: var(--text-spacing);
+}
+
+/* styling for the card elements */
 .box {
-  /* border: 4px solid #000; */
-  padding-top: 0.5rem;
-  border-radius: 0.5rem;
-  color: #000;
-  background-color: #fff;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0;
+  border-radius: 0.5rem; /* round corners for the box / card elements */
+  color: var(--darker-color);
+  background-color: white;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2); /* setting a shadow for the box / card elements */
   margin: 1rem;
+  transition: all 0.6s ease-in; /* setting the transition for the box / card elements */
 }
+.box:nth-child(odd):hover {
+  /* on hover skew the odd card elements clockwise with 2deg and setting a box shadow */
+  transform: skewY(2deg);
+  box-shadow: 0.5rem 0.5rem 0.4rem var(--darker-color),
+    -0.5rem -0.5rem 0.4rem var(--lighter-color);
+}
+.box:nth-child(even):hover {
+  /* on hover skew the even card elements counterclockwise with 2deg and setting a box shadow */
+  box-shadow: 0.5rem 0.5rem 0.4rem var(--lighter-color),
+    -0.5rem -0.5rem 0.4rem var(--darker-color);
+  transform: skewY(-2deg);
+}
+.image {
+  position: relative;
+  width: 100%; /* image responsive, fallaback */
+  max-width: 100%; /* image responsive */
+  filter: blur(1px); /* adding a blur to the image*/
+  transition: all 0.6s ease-in; /* setting the transition for the box / card elements */
+  transform: scale(0.8); /* start with a smaller scale */
+  overflow: hidden;
+}
+.box:hover > .image {
+  filter: blur(
+    0
+  ); /* on hovering the card element remove the blur from the image */
+  transform: scale(1); /* increase the scale to 1 */
+}
+
+/* utility classes */
 .text-center {
   text-align: center;
 }

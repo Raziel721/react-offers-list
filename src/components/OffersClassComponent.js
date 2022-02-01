@@ -12,6 +12,7 @@ export class OffersClassComponent extends Component {
   }
   render() {
     const dataOffers = data[0].offers;
+    console.log(dataOffers);
 
     return (
       <>
@@ -28,13 +29,16 @@ export class OffersClassComponent extends Component {
             return (
               //   displaying all the offers in a grid based layout
               <div className="box" key={carId}>
-                <img src={carImage} alt="Auto" />
-                <h4 className="text-center">{carName}</h4>
-                <p className="text-center">
-                  Total Price:&nbsp;
-                  {carPrice}&nbsp;
-                  {carCurreny}
-                </p>
+                <div className="car-title">
+                  <h3>{carName}</h3>
+                </div>
+                <img className="image" src={carImage} alt="Auto" />
+                <div className="car-price">
+                  <p>
+                    {carPrice}&nbsp;
+                    {carCurreny}&nbsp; pro Monat *
+                  </p>
+                </div>
               </div>
             );
           })}

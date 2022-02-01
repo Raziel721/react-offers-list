@@ -16,15 +16,18 @@ function Offers() {
           const carCurreny = offer.prices.totalPrice.amount.currency;
 
           return (
-            //   displaying all the offers in a grid
-            <div key={carId}>
-              <h4>{carName}</h4>
-              <img src={carImage} alt="Auto" />
-              <p>
-                Total Price:&nbsp;
-                {carPrice}&nbsp;
-                {carCurreny}
-              </p>
+            // displaying all the offers in a grid based layout
+            <div className="box" key={carId}>
+              <div className="car-title">
+                <h3>{carName}</h3>
+              </div>
+              <img className="image" src={carImage} alt="Auto" />
+              <div className="car-price">
+                <p>
+                  {carPrice}&nbsp;
+                  {carCurreny}&nbsp; pro Monat *
+                </p>
+              </div>
             </div>
           );
         })}
