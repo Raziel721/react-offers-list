@@ -25,7 +25,8 @@
   justify-content: flex-end;
 }
 .car-title h3,
-.car-price p {
+.car-price p,
+.headline h1 {
   background-color: var(--darker-color);
   color: white;
   padding: var(--text-spacing);
@@ -72,4 +73,18 @@
 /* utility classes */
 .text-center {
   text-align: center;
+}
+
+/* headline styling */
+.headline {
+  background-color: var(--main-bg-color);
+  padding: 5rem;
+}
+
+.headline h1 {
+  width: max-content;
+  margin: 0 auto;
+  padding: 1rem 8rem;
+  text-align: center;
+  text-transform: uppercase;
 }

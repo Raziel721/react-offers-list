@@ -20,6 +20,9 @@ export class OffersClassComponent extends Component {
 
     return (
       <>
+        <div className="headline">
+          <h1>Lease a car</h1>
+        </div>
         <div className="offers">
           {dataOffers.map((offer) => {
             // looping through all the offers from the json file
